@@ -4,9 +4,9 @@ const Login = (props) => {
     return(
         <div className="login-container">
             <img className="logo" src={logo} alt="logo" />
-            <input className="correo" type="text" ></input>
-            <input className="contraseña" type="password"></input>
-            <button className="iniciarSesion" type="submit">Iniciar Sesion</button>
+            <input className="correo" type="text" placeholder="Escribe tu correo"></input>
+            <input className="contraseña" type="password" placeholder="Escribe tu contraseña"></input>
+            <button className="iniciar-sesion" type="submit">Iniciar Sesion</button>
         </div>
     );
 }
