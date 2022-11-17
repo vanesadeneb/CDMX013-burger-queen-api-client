@@ -38,5 +38,31 @@
     .iniciar-sesion{
       background-color: #44CBD3;
     }
+    .header-container{
+      height: 100%;
+      background-image: url(https://www.solofondos.com/wp-content/uploads/2015/11/fondo-del-espacio-universo-estrellas-space-wallpaper-download-55f6f9c842ca4.jpg);
+      background-attachment: fixed;
+      background-size: cover;
+      margin: 0;
+      /* display: flexbox; */
+    }
+    .logoHorizontal{
+      margin-top: 1%;
+      margin-left: 2%;
+    }
+    .titulo{
+      position: relative;
+      color: #44CBD3;
+      font-size: larger;
+      margin-left: 45%;
+      margin-top: -5%;
+      font-family: 'Comfortaa', cursive;
+    }
+    .logOut{
+      position: relative;
+      margin-top: -5%;
+      margin-left: 90%;
+
+    }
   }
 
