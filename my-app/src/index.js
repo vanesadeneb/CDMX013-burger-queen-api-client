@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import Login from './componentes/LogIn.js'
+//import Login from './componentes/LogIn.js'
+import { ProductosBreakfast, productos } from './componentes/Products.js';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Login/>
+    <ProductosBreakfast
+    imagen={productos.imagen}
+    nombre={productos.nombre}
+    precio={productos.precio}
+    />
   </React.StrictMode>
 );
 

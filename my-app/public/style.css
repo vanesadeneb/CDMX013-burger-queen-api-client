@@ -40,3 +40,40 @@
     }
   }
 
+  .producto {
+  background-color: #44CBD3; 
+  position: absolute;
+  width: 202px;
+  height: 174px;
+  left: 140px;
+  top: 415px;
+  border-radius: 30px 30px 30px 30px;
+  }
+
+  .imagen-producto {
+    position: relative;
+    width: 202px;
+    height: 174px;
+    border-radius: 30px 30px 30px 30px;
+  }
+
+  .contenedortexto {
+    position: fixed;
+    width: 202px;
+    height: 67px;
+    left: 140px;
+    top: 519px;
+    background: rgba(0, 0, 0, 0.49);
+    mix-blend-mode: normal;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 30px 30px;
+  }
+
+  p {
+    color: aliceblue;
+    text-align: center;
+    margin: 3px;
+   }
+
+
+
