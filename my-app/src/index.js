@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import {Header, titulo} from './componentes/Header.js'
 import BotonesMesero from './componentes/BotonesMesero';
 import Pedido from './componentes/Pedidos'
+import { ProductosBreakfast, productos } from './componentes/ProductosDesayuno';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,6 +15,12 @@ root.render(
       text = { titulo.text}
        />
     <BotonesMesero/>
+    <ProductosBreakfast
+      imagen={productos.imagen}
+      nombre={productos.nombre}
+      precio={productos.precio}
+      />
+  
     <Pedido/>
    
     {/*
