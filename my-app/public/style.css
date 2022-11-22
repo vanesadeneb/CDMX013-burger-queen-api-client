@@ -4,7 +4,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 1.05rem;
+}
+
+body {
+  background-color: #F1F2F8;
 }
 
 @media only screen 
@@ -38,6 +41,156 @@
     .iniciar-sesion{
       background-color: #44CBD3;
     }
+    .header-container{
+      height: 8em;
+      background-image: url(https://www.solofondos.com/wp-content/uploads/2015/11/fondo-del-espacio-universo-estrellas-space-wallpaper-download-55f6f9c842ca4.jpg);
+      background-attachment: fixed;
+      background-size: cover;
+      margin: 0;
+      /*position: fixed;*/
+      /* display: flexbox; */
+    }
+    .logoHorizontal{
+      margin-top: 1%;
+      margin-left: 2%;
+    }
+    .titulo{
+      /*position: fixed;*/
+      color: #44CBD3;
+      font-size: 3em;
+      margin-left: 9em;
+      margin-top: -1.7em;
+      font-family: 'Comfortaa', cursive;
+    }
+    .logOut{
+      /*position: fixed;*/
+      z-index: 2;
+      margin-top: 2em;
+      margin-left: 80em;
+    }
+    .botones-container{
+      position: absolute;
+      display: flex;
+      /*margin-top: 9em;*/
+    }
+    .boton-desayuno{
+      background-color: #0C3F78;
+      width: 8em;
+      height: 2em;
+      color:white;
+    }
+    .boton-comida{
+      background-color: #0C3F78;
+      width: 8em;
+      height: 2em;
+      color:white;
+    }
+    .boton-pedidos{
+      background-color: #0C3F78;
+      width: 8em;
+      height: 2em;
+      color:white;
+    }
+    .contenedor-pedidos{
+      border: 1px solid #E8AB58;
+      background-color: rgba(176, 227, 217, 0.5);
+      width: 598px;
+      height: 736px;
+      margin: -50px 850px;
+      padding: 20px;
+      border-radius: 20px;
+  }
+  .contenedor-pedidos header{
+      color: #8C56B5;
+      padding: 10px;
+      border-bottom: 1px solid #000;
+      font-weight: 700;
+  }
+  .main{
+      font-size: 30px;
+  
+  }
+  .lista-productos{
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      margin-bottom: 86px;
+  }
+  .lista-productos li{
+      display: grid;
+      grid-template-columns: 2fr 2fr 1fr;
+      align-items: center;
+  }
+  .contador{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .precio{
+      text-align: right;
+  }
+  footer{
+      display: flex;
+      justify-content: center;
+  }
+  .lista-productos button{
+      width: 40px;
+      height: 40px;
+  }
+  .impuestos{
+      padding: 22px 0px;
+      border-bottom: 1px solid #000;
+      border-top: 1px solid #000;
+  }
+  .total{
+      display: flex;
+      justify-content: space-between;
+      margin: 77px 0px;
+      font-weight: bold;
+  }
+  .enviar{
+      width: 387px;
+      height: 66px;
+      background: #0C3F78;
+      color: white;
+      border-radius: 7px;
+  }
+  .contenedor-producto {
+    background-color: #44CBD3; 
+    position: relative;
+    width: 202px;
+    height: 174px;
+    left: 30px;
+    top: 120px;
+    border-radius: 30px 30px 30px 30px;
+    }
+  
+    .imagen-producto {
+      position: relative;
+      width: 202px;
+      height: 174px;
+      border-radius: 30px 30px 30px 30px;
+      z-index: 2;
+    }
+  
+    .contenedortexto {
+      position: absolute;
+      width: 202px;
+      height: 67px;
+      left: 0px;
+      top: 105px;
+      background: rgba(0, 0, 0, 0.49);
+      mix-blend-mode: normal;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 0px 0px 30px 30px;
+      z-index: 3
+    }
+  
+    .infoproducto {
+      color: aliceblue;
+      text-align: center;
+      margin: 3px;
+     }
+  
   }
 
   .producto {
