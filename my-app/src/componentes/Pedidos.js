@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Pedido = (props) => {
     return (
         <div className="contenedor-pedidos">
