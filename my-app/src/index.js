@@ -1,38 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 //import Login from './componentes/LogIn.js'
-import {Header, titulo} from './componentes/Header.js'
-import BotonesMesero from './componentes/BotonesMesero';
-import Pedido from './componentes/Pedidos'
-import { ProductosBreakfast, productos } from './componentes/ProductosDesayuno';
+//import {Header, titulo} from './componentes/Header.js'
+//import BotonesMesero from './componentes/BotonesMesero';
+//import Pedido from './componentes/Pedidos'
+//import { ProductosBreakfast, productos } from './componentes/ProductosDesayuno';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Header
-      text = { titulo.text}
-       />
-    <BotonesMesero/>
-    <ProductosBreakfast
-      imagen={productos.imagen}
-      nombre={productos.nombre}
-      precio={productos.precio}
-      />
-  
-    <Pedido/>
-   
-    {/*
-      <Login/>
-
-      <Header
-      text = { titulo.text}
-       />
-    
-    <Header
-      text = { titulo.text= "otro texto"}
-    /> */}
+  <App/>
   </React.StrictMode>
 );
 //
