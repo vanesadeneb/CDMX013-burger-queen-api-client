@@ -41,7 +41,7 @@ body {
       background-color: #44CBD3;
     }
     .header-container{
-      height: 8em;
+      height: 202px;
       background-image: url(https://www.solofondos.com/wp-content/uploads/2015/11/fondo-del-espacio-universo-estrellas-space-wallpaper-download-55f6f9c842ca4.jpg);
       background-attachment: fixed;
       background-size: cover;
@@ -55,6 +55,8 @@ body {
     .logoHorizontal{
       margin-top: 1%;
       margin-left: 2%;
+      width: 417px;
+      height: 146px;
     }
     .titulo{
       /*position: fixed;*/
@@ -67,23 +69,30 @@ body {
       align-self: center;
     }
     .logOut{
-      width: 64px;
-      height: 64px;
+      width: 83px;
+      height: 85px;
       margin-right: 49px;
     }
     .logOutText{
       color: #44CBD3;
+      font-size: 24px;
     }
     .botones-container{
       position: absolute;
       display: flex;
       /*margin-top: 9em;*/
     }
+    .botones{
+      width: 200px;
+      height: 70px;
+      font-size: 20px;
+      color: #FFFFFF;
+      background: #0C3F78;
+      border-radius: 10px;
+      border: 0;
+    }
     .boton-desayuno{
-      background-color: #0C3F78;
-      width: 8em;
-      height: 2em;
-      color:white;
+      background: #8C56B5;
     }
     .boton-comida{
       background-color: #0C3F78;
@@ -92,17 +101,16 @@ body {
       color:white;
     }
     .boton-pedidos{
-      background-color: #0C3F78;
-      width: 8em;
-      height: 2em;
-      color:white;
+      width: 200px;
+      height: 70px;
+      padding: 4px;
     }
     .contenedor-pedidos{
       border: 1px solid #E8AB58;
       background-color: rgba(176, 227, 217, 0.5);
       width: 598px;
       height: 736px;
-      margin: -50px 750px;
+      margin: -132px 750px;
       padding: 20px;
       border-radius: 20px;
   }

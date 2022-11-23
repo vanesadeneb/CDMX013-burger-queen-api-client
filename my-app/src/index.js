@@ -2,17 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-//import Login from './componentes/LogIn.js'
-//import {Header, titulo} from './componentes/Header.js'
-//import BotonesMesero from './componentes/BotonesMesero';
-//import Pedido from './componentes/Pedidos'
-//import { ProductosBreakfast, productos } from './componentes/ProductosDesayuno';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-  <App/>
+    <App/>
   </React.StrictMode>
 );
 //
