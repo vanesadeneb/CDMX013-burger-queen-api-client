@@ -3,9 +3,9 @@ import React from 'react';
 const BotonesMesero = (props) => {
     return(
         <div className="botones-container">
-           <button className="boton-desayuno" type="submit">Desayunos</button>
-           <button className="boton-comida" type="submit">Comida</button>
-           <button className="boton-pedidos" type="submit">Completados</button>
+           <button className="botones boton-desayuno" type="submit">Desayunos</button>
+           <button className="botones" type="submit">Comida</button>
+           <button className="botones boton-pedidos" type="submit">Pedidos Completados</button>
         </div>
     );
 }

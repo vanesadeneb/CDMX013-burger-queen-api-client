@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const Login = (props) => {
     const navigate = useNavigate();
     
-    const onSubmit = (userName, e) => {
+    const onSubmit = (e) => {
         navigate('/pedidos');
     } 
     
