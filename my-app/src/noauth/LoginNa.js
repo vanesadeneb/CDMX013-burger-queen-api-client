@@ -7,23 +7,20 @@ const Login = (props) => {
     
     const onSubmit = (e) => {
         e.preventDefault();
-        const email= e.target.correo.value;
-        const password= e.target.contraseña.value;
+        const correo = e.target.correo.value;
+        const contraseña = e.target.contraseña.value;
 
-        console.log(email, password);
-        //navigate('/');
-
-
+        console.log(correo, contraseña)
+        //navigate('/pedidos');
     } 
     
     return(
-        <form className="login-container">
+        <div className="login-container">
             <img className="logo" src={logo} alt="logo" />
-            
             <input className="correo" type="text" placeholder="Escribe tu correo" htmlFor="correo"></input>
             <input className="contraseña" type="password" placeholder="Escribe tu contraseña" htmlFor="contraseña"></input>
             <button className="iniciar-sesion" type="submit" onClick={onSubmit}>Iniciar Sesion</button>
-        </form>
+        </div>
     );
 }
 
