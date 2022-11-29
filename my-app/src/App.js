@@ -9,7 +9,7 @@ import { routerAuth } from './auth/routerAuth';
 //import Mesero from './componentes/Mesero';
 
 export default function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({Email: 'vanesa@burger.com'});
 
   return (
     <div>

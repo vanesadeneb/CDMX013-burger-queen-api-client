@@ -21,3 +21,5 @@ export const productos = {
     nombre: 'Sandwich de jamon y queso',
     precio: '$50'
 } 
+
+export default ProductosBreakfast;
