@@ -1,18 +1,24 @@
-import { useState } from 'react';
+
+import React from 'react';
+import { useState } from "react";
+import { RouterProvider } from "react-router-dom";
+//import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import { routerNoAuth } from './noauth/routerNoAuth';
 import { routerAuth } from './auth/routerAuth';
-import { RouterProvider } from 'react-router-dom';
+//import Login from './componentes/LogIn';
+//import Mesero from './componentes/Mesero';
 
+export default function App() {
+  const [user, setUser] = useState(null);
 
-
-/* import React from 'react';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import Login from './componentes/LogIn';
-import Mesero from './componentes/Mesero'; */
-
-
-/* export default function App() {
   return (
+    <div>
+      {user
+        ? <RouterProvider router={routerAuth} />
+        : <RouterProvider router={routerNoAuth} />
+      }
+    </div>
+    /*
     <Router>
         <Routes>
           <Route path="/pedidos" element={<Mesero />} />
@@ -26,19 +32,6 @@ import Mesero from './componentes/Mesero'; */
             }
           />
         </Routes>
-    </Router>
-  );
-} */
-
-//Estudiar redenrizado condicional 
-
-function App() {
-  const [user, setUser] = useState(null);
-  return (
-    <div>
-      {user ? <RouterProvider router={routerAuth} /> : <RouterProvider router={routerNoAuth} />}
-    </div>
+    </Router>*/
   );
 }
-
-export default App;

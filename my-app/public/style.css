@@ -204,7 +204,18 @@ body {
       text-align: center;
       margin: 3px;
      }
-  
 
+     form {
+      width: 100%;
+      text-align: center;
+     }
+
+     #errorCorreo,  #errorContraseña{
+      color: #E8AB58;
+      visibility: hidden;
+      font-size: 2em;
+     }
+     .error{
+      visibility: hidden;
+     }
   }
-

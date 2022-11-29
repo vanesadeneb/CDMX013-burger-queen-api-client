@@ -1,11 +1,14 @@
-import LogInNa from "./LoginNa";
+import React from 'react';
 import {
     createBrowserRouter,
   } from "react-router-dom";
+import Login from "../componentes/LogIn";
+import ErrorPage from "../error-page";
 
 export const routerNoAuth = createBrowserRouter([
     {
       path: "/",
-      element: <LogInNa />,
-    },
+      element: <Login />,
+      errorElement: <ErrorPage />,
+    }
   ]);
