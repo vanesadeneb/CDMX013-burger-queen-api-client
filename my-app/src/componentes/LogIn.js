@@ -11,31 +11,43 @@ const Login = () => {
         fetch('https://6375370348dfab73a4f4e62a.mockapi.io/api/AUTH')
         .then(response => response.json())
         .then(todosLosUsuarios => setCorreo(todosLosUsuarios))
-    },[])   
+    },[])
     
     const onSubmit = (e) => {
         e.preventDefault();
         
-        const correo = e.target.correo.value;
-        const contraseña = e.target.contraseña.value;
+        const correoDelInput = e.target.correo.value;
+        const contraseñaDelInput = e.target.contraseña.value;
 
-        console.log(correo, contraseña);
+        //console.log(correo, contraseña);
 
         //validaciones
-        if(correo === ''){
+        if(correoDelInput === ''){
             document.getElementById('errorCorreo').style.visibility = 'visible';
         }else{
-            setCorreo(correo);
+            setCorreo(correoDelInput);
             document.getElementById('errorCorreo').style.visibility = 'hidden';
         }
 
-        if(contraseña === ''){
+        if(contraseñaDelInput === ''){
             document.getElementById('errorContraseña').style.visibility = 'visible';
         }else{
-            setContraseña(contraseña);
+            setContraseña(contraseñaDelInput);
             document.getElementById('errorContraseña').style.visibility = 'hidden';
         }
-
+        console.log(correo[1].Email);
+        correo.forEach((usuario) => {
+            if(usuario.Email === correoDelInput){
+               const rol = usuario.Rol;
+               switch(rol){
+                case('Mesero'):
+                console.log(usuario, rol);
+                navigate("/pedidos");
+                break;
+               }
+            }
+        });
+        
         //fetch('https://6375370348dfab73a4f4e62a.mockapi.io/api/AUTH')
         //    .then(response => response.json())
         //    .then(todosLosUsuarios => setUsuarios(todosLosUsuarios))
