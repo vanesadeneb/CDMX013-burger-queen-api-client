@@ -1,10 +1,23 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import Login from './componentes/LogIn';
-import Mesero from './componentes/Mesero';
+import { useState } from "react";
+import { RouterProvider } from "react-router-dom";
+//import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { routerNoAuth } from './noauth/routerNoAuth';
+import { routerAuth } from './auth/routerAuth';
+//import Login from './componentes/LogIn';
+//import Mesero from './componentes/Mesero';
 
 export default function App() {
+  const [user, setUser] = useState(null);
+
   return (
+    <div>
+      {user
+        ? <RouterProvider router={routerAuth} />
+        : <RouterProvider router={routerNoAuth} />
+      }
+    </div>
+    /*
     <Router>
         <Routes>
           <Route path="/pedidos" element={<Mesero />} />
@@ -18,6 +31,6 @@ export default function App() {
             }
           />
         </Routes>
-    </Router>
+    </Router>*/
   );
 }
