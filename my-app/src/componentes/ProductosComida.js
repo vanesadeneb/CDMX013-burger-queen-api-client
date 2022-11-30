@@ -4,10 +4,10 @@ import { useState } from 'react';
 import Platillos from './Platillos'; 
 
 
-export const ProductosBreakfast = (props) => {
+export const ProductosComida = (props) => {
     const [productos, setProductos] = useState(null);
     useEffect(() => {
-        fetch('https://6375370348dfab73a4f4e62a.mockapi.io/api/DESAYUNOS')
+        fetch('https://6375370348dfab73a4f4e62a.mockapi.io/api/COMIDA')
             .then(response => response.json())
             .then(productosDesayuno => setProductos(productosDesayuno))
     }, [])
@@ -25,4 +25,4 @@ export const ProductosBreakfast = (props) => {
     precio: '$50'
 } */
 
-export default ProductosBreakfast;
+export default ProductosComida;

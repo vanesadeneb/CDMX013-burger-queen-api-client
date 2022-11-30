@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useState } from "react";
 import { RouterProvider } from "react-router-dom";
@@ -8,7 +9,12 @@ import { routerAuth } from './auth/routerAuth';
 //import Mesero from './componentes/Mesero';
 
 export default function App() {
-  const [user, setUser] = useState({Email: 'vanesa@burger.com'});
+  const [user, setUsuario] = useState(() => {
+    // Obteniendo valor guardado
+    const guardado = localStorage.getItem("credenciales");
+    const valorInicial = JSON.parse(guardado);
+    return valorInicial || null;
+  });
 
   return (
     <div>

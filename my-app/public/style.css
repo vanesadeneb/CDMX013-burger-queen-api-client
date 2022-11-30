@@ -110,9 +110,10 @@ body {
       background-color: rgba(176, 227, 217, 0.5);
       width: 598px;
       height: 736px;
-      margin: -132px 750px;
+      margin: 30px 750px;
       padding: 20px;
       border-radius: 20px;
+      position: absolute;
   }
   .contenedor-pedidos header{
       color: #8C56B5;
@@ -168,6 +169,12 @@ body {
       color: white;
       border-radius: 7px;
   }
+
+  .container-productos {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 2fr 2fr 8fr;
+  }
   .contenedor-producto {
     background-color: #44CBD3; 
     position: relative;
@@ -176,6 +183,7 @@ body {
     left: 30px;
     top: 120px;
     border-radius: 30px 30px 30px 30px;
+    margin: 10px;
     }
   
     .imagen-producto {

@@ -11,18 +11,18 @@ const Pedido = (props) => {
                     <li>
                         <span className="producto">Cafe Americano</span>
                         <span className="contador">
-                            <button>+</button>
+                            <button  onClick={() => console.log("funciona el click")}>+</button>
                             <span>1</span>
-                            <button>-</button>
+                            <button  onClick={() => console.log("funciona el click")}>-</button>
                         </span>
                         <span className="precio">$50.00</span>
                     </li>
                     <li>
                         <span className="producto">Sandwich de jamón y queso</span>
                         <span className="contador">
-                            <button>+</button>
+                            <button  onClick={() => console.log("funciona el click")}>+</button>
                             <span>1</span>
-                            <button>-</button>
+                            <button  onClick={() => console.log("funciona el click")}>-</button>
                         </span>
                         <span className="precio">$150.00</span>
                     </li>
@@ -32,7 +32,7 @@ const Pedido = (props) => {
                     <p>Total: </p><span>$200.00</span>
                 </section>
                 <footer>
-                    <button className="enviar">Mandar Pedido</button>
+                    <button className="enviar"  onClick={() => console.log("funciona el click")}>Mandar Pedido</button>
                 </footer>
             </main>
         </div>
