@@ -6,8 +6,9 @@ import { useNavigate } from 'react-router-dom';
 export const Header = (props) => {
     const navigate = useNavigate();
     
-    const logout = (e) => {
-        navigate('/');
+    const logout = (e) => {localStorage.clear() 
+        console.log(localStorage.getItem('credenciales'));
+        navigate('/');
     } 
     return(
         <div className="header-container">
