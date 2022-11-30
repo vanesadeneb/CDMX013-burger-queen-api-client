@@ -44,7 +44,7 @@ const Login = () => {
                switch(rol){
                 case('Mesero'):
                     console.log(usuario, rol);
-                    navigate("/");
+                    navigate("/Mesero");
                     break;
                 default:
                     console.log('no estas registrado o no tienes un rol asignado');
