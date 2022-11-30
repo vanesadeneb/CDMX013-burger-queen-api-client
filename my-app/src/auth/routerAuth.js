@@ -3,18 +3,23 @@ import {
     createBrowserRouter,
   } from "react-router-dom";
 import Mesero from "../componentes/Mesero";
-import ProductosBreakfast from '../componentes/ProductosDesayuno';
+import Admin from '../componentes/Admin';
 
 export const routerAuth = createBrowserRouter([
     {
       path: "/pedidos",
       element: <Mesero />,
-      
+      /*
       children: [
         {
-            path: "pedidos/menuDesayuno",
-            element: <ProductosBreakfast />,
+            path: "/usuarios",
+            element: <Usuarios />,
         }
-      ],
+      ]*/
+    },
+    {
+      path : "/admin",
+      element : <Admin />,
     }
+    
   ]);

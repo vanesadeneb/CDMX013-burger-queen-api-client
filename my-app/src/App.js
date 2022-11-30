@@ -1,18 +1,21 @@
-import React from 'react';
-import { useState } from "react";
+import React, { useState } from 'react';
 import { RouterProvider } from "react-router-dom";
-//import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import { routerNoAuth } from './noauth/routerNoAuth';
 import { routerAuth } from './auth/routerAuth';
-//import Login from './componentes/LogIn';
-//import Mesero from './componentes/Mesero';
 
 export default function App() {
-  const [user, setUser] = useState({Email: 'vanesa@burger.com'});
-
+  //const credencial = localStorage.getItem('correo');
+  //console.log(credencial);
+  const [usuario, setUsuario] = useState(() => {
+    // Obteniendo valor guardado
+    const guardado = localStorage.getItem("credenciales");
+    const valorInicial = JSON.parse(guardado);
+    return valorInicial || null;
+  });
+  console.log(usuario);
   return (
     <div>
-      {user
+      {usuario
         ? <RouterProvider router={routerAuth} />
         : <RouterProvider router={routerNoAuth} />
       }
