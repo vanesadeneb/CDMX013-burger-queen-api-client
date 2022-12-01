@@ -10,7 +10,7 @@ const Pedido = (props) => {
     });
 
     const restar = () => {
-        if(contar > 1){
+        if(contar > 0){
             setContar(contar - 1);
         }
         
