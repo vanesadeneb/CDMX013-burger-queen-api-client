@@ -69,18 +69,21 @@ body {
     }
     .contenedor-completados{
       align-content: flex-end;
-      /*margin-left: 450px;*/
+      margin-right: 48px;
 
     }
     .completados{
       width: 83px;
       height: 85px;
+      margin-left: 22px;
       
     }
     .completadosText{
       color: #44CBD3;
       font-size: 18px;
-          }
+      width: 110px;
+      text-align: center;
+    }
     .contenedor-logout{
       align-self: center;
     }
@@ -248,4 +251,10 @@ body {
      .error{
       visibility: hidden;
      }
+  }
+  #contenedor-botones{
+    margin-right: 39px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }

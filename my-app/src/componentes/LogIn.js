@@ -39,7 +39,7 @@ const Login = () => {
         }
         //console.log(correo, contraseña);
         usuarios.forEach((usuario) => {
-            if(usuario.Email === correo){
+            if(usuario.Email === correo && usuario.Password === contraseña){
                const rol = usuario.Rol;
                switch(rol){
                 case('Mesero'):

@@ -18,14 +18,15 @@ export const Header = (props) => {
         <div className="header-container">
             <img className="logoHorizontal" src={spaceburgersHorizontal} alt="Space Burgers" />
             <p className="titulo">{props.text}</p>
-            <div className='contenedor-completados' onClick={completados}> 
-                <img className='completados' src={notification} alt="Pedidos Completados" />
-                <p className='completadosText'>Pedidos</p>
-                <p className='completadosText'>Completados</p>
-            </div>
-            <div className='contenedor-logout' onClick={logout}>
-                <img className="logOut" src={rocket} alt="Log Out" />
-                <p className='logOutText'>Log Out</p>
+            <div id="contenedor-botones">
+                <div className='contenedor-completados' onClick={completados}> 
+                    <img className='completados' src={notification} alt="Pedidos Completados" />
+                    <p className='completadosText'>Pedidos Completados</p>
+                </div>
+                <div className='contenedor-logout' onClick={logout}>
+                    <img className="logOut" src={rocket} alt="Log Out" />
+                    <p className='logOutText'>Log Out</p>
+                </div>
             </div>
            
         </div>

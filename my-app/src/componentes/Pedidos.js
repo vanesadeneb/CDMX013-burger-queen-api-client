@@ -1,6 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
 
 const Pedido = (props) => {
+
+    const [contar, setContar] = useState(0);
+        
+    useEffect(()=>{
+        document.getElementById('cantidad').textContent = contar;
+    });
+
+    const restar = () => {
+        if(contar > 1){
+            setContar(contar - 1);
+        }
+        
+    }
+
     return (
         <div className="contenedor-pedidos">
             <header>
@@ -11,9 +26,9 @@ const Pedido = (props) => {
                     <li>
                         <span className="producto">Cafe Americano</span>
                         <span className="contador">
-                            <button  onClick={() => console.log("funciona el click")}>+</button>
-                            <span>1</span>
-                            <button  onClick={() => console.log("funciona el click")}>-</button>
+                            <button  onClick={() => setContar(contar + 1)}>+</button>
+                            <span id='cantidad'>1</span>
+                            <button  onClick={restar}>-</button>
                         </span>
                         <span className="precio">$50.00</span>
                     </li>
