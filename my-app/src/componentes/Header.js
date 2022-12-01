@@ -33,5 +33,5 @@ export const Header = (props) => {
 }
 
 export const titulo = {
-    text: "Menú Desayunos",
+    text: "Menú",
 }
