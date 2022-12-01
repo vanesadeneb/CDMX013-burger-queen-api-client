@@ -61,7 +61,7 @@ const Login = () => {
                 <input className="correo" id="correo" value={correo} type="text" onChange={(e) => setCorreo(e.target.value)} placeholder="Escribe tu correo"></input>
                 <p id='errorCorreo'>Por favor ingresa un correo</p>
                 <input className="contraseña" id="contraseña" value={contraseña} type="password" onChange={(e) => setContraseña(e.target.value)} placeholder="Escribe tu contraseña"></input>
-                <p id='errorContraseña'>Por favor ingresa un correo</p>
+                <p id='errorContraseña'>Por favor ingresa tu contraseña</p>
                 <button className="iniciar-sesion" type="submit">Iniciar Sesion</button>
             </form>
         </div>

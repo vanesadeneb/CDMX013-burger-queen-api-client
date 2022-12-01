@@ -61,10 +61,24 @@ body {
     .titulo{
       /*position: fixed;*/
       color: #44CBD3;
-      margin-left: -104px;
+      margin-left: -50px;
       font-size: 3em;
       font-family: 'Comfortaa', cursive;
     }
+    .contenedor-completados{
+      /*align-content: center;*/
+      margin-left: 200px;
+
+    }
+    .completados{
+      width: 83px;
+      height: 85px;
+      
+    }
+    .completadosText{
+      color: #44CBD3;
+      font-size: 18px;
+          }
     .contenedor-logout{
       align-self: center;
     }
@@ -75,7 +89,7 @@ body {
     }
     .logOutText{
       color: #44CBD3;
-      font-size: 24px;
+      font-size: 18px;
     }
     .botones-container{
       position: absolute;
@@ -91,15 +105,21 @@ body {
       border-radius: 10px;
       border: 0;
     }
-    .boton-desayuno{
+    .botones:hover{
       background: #8C56B5;
     }
-    .boton-comida{
-      background-color: #0C3F78;
-      width: 8em;
-      height: 2em;
-      color:white;
+/*     .boton-desayuno{
+      
     }
+    .boton-comida{
+      width: 200px;
+      height: 70px;
+      font-size: 20px;
+      color: #FFFFFF;
+      background: #0C3F78;
+      border-radius: 10px;
+      border: 0;
+    } */
     .boton-pedidos{
       width: 200px;
       height: 70px;
