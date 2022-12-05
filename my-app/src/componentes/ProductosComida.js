@@ -7,13 +7,13 @@ import Platillos from './Platillos';
 export const ProductosComida = (props) => {
     const [productos, setProductos] = useState(null);
     useEffect(() => {
-        fetch('https://6375370348dfab73a4f4e62a.mockapi.io/api/COMIDA')
+        fetch('https://6375370348dfab73a4f4e62a.mockapi.io/api/Products')
             .then(response => response.json())
             .then(productosDesayuno => setProductos(productosDesayuno))
     }, [])
     return (
         <div className='container-productos'>
-            {productos && productos.map(producto => <Platillos producto={producto} key={producto.Producto}/>)}
+            {productos && productos.map(producto => <Platillos producto={producto} key={producto.id}/>)}
         </div>
         
     );

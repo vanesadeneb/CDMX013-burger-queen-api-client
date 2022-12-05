@@ -1,16 +1,16 @@
 import React from "react"
 
-const Platillos = (props) => {
+const Platillos = ({producto, agregar}) => {
     return(
-    <div className='contenedor-producto' onClick={() => console.log("funciona el click")}>
+    <div className='contenedor-producto' onClick={agregar}>
 
         <img className="imagen-producto"
-            src={props.producto.Imagen}
-            alt={props.producto.Producto}
+            src={producto.image}
+            alt={producto.name}
         />
         <div className='contenedortexto'>
-            <p className='infoproducto'>{props.producto.Producto}</p>
-            <p className='infoproducto'> {props.producto.Precio}</p>
+            <p className='infoproducto'>{producto.name}</p>
+            <p className='infoproducto'> {producto.price}</p>
         </div>
         </div>
 )}
