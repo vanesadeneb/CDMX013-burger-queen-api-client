@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 
-const Pedido = (props) => {
-
+const Pedido = ({order}) => {
+    console.log("orden: ", order);
+    const [productos, setProductos] = useState(null);
+    /*
     const [contar, setContar] = useState(0);
         
     useEffect(()=>{
@@ -15,32 +17,25 @@ const Pedido = (props) => {
         }
         
     }
-
+*/
     return (
         <div className="contenedor-pedidos">
             <header>
-                <h1>Pedido #0000{props.num}:</h1>
+                <h1>Pedido #0000:</h1>
             </header>
             <main className="main">
                 <ul className="lista-productos">
+                    {order.map((item) =>
                     <li>
-                        <span className="producto">Cafe Americano</span>
+                        <span className="producto">Café Americano</span>
                         <span className="contador">
-                            <button  onClick={() => setContar(contar + 1)}>+</button>
+                            <button  >+</button>
                             <span id='cantidad'>1</span>
-                            <button  onClick={restar}>-</button>
+                            <button  >-</button>
                         </span>
                         <span className="precio">$50.00</span>
                     </li>
-                    <li>
-                        <span className="producto">Sandwich de jamón y queso</span>
-                        <span className="contador">
-                            <button  onClick={() => console.log("funciona el click")}>+</button>
-                            <span>1</span>
-                            <button  onClick={() => console.log("funciona el click")}>-</button>
-                        </span>
-                        <span className="precio">$150.00</span>
-                    </li>
+                )}
                 </ul>
                 <p className="impuestos">Impuestos (incluidos)</p>
                 <section className="total">
