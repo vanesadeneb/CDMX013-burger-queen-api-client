@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Platillos from './Platillos'; 
 
 
-export const ProductosComida = (props) => {
+export const ProductosComida = ({agregar}) => {
     const [productos, setProductos] = useState(null);
     useEffect(() => {
         fetch('https://6375370348dfab73a4f4e62a.mockapi.io/api/Products')
@@ -13,7 +13,14 @@ export const ProductosComida = (props) => {
     }, [])
     return (
         <div className='container-productos'>
-            {productos && productos.map(producto => <Platillos producto={producto} key={producto.id}/>)}
+            {productos && productos.map(producto =>{
+                //console.log("producto desayuno:",producto);
+                if(producto.type === "comida"){
+                    return <Platillos producto={producto} key={producto.id} agregar={agregar}/>
+
+                }
+            })
+        } 
         </div>
         
     );
