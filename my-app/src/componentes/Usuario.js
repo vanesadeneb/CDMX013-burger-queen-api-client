@@ -3,11 +3,20 @@ import React from 'react';
 const Usuario = (props) => {
     console.log(props.usuario.Email);
     return (
-        <div>
-            <p>Email: {props.usuario.Email}</p>
-            <p>Rol : {props.usuario.Rol}</p>
-            <p>Id: {props.usuario.id}</p>
-        </div>
+        <table>
+
+            <tr>
+
+                <td>Email: {props.usuario.Email}</td>
+
+                <td>Rol : {props.usuario.Rol}</td>
+
+                <td>Id: {props.usuario.id}</td>
+
+            </tr>
+
+
+        </table>
     );
 };
 

@@ -46,6 +46,10 @@ const Login = () => {
                     console.log(usuario, rol);
                     navigate("/Mesero");
                     break;
+                case('Admin'):
+                    console.log(usuario, rol);
+                    navigate("/Admin");
+                    break;
                 default:
                     console.log('no estas registrado o no tienes un rol asignado');
                     break;
