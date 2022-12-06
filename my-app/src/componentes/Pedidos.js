@@ -27,10 +27,10 @@ const Pedido = ({order}) => {
                 <ul className="lista-productos">
                     {order.map((item) =>
                     <li>
-                        <span className="producto">Café Americano</span>
+                        <span className="producto">{item.product.name}</span>
                         <span className="contador">
                             <button  >+</button>
-                            <span id='cantidad'>1</span>
+                            <span id='cantidad'>{item.qty}</span>
                             <button  >-</button>
                         </span>
                         <span className="precio">$50.00</span>

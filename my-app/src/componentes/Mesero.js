@@ -11,14 +11,15 @@ const Mesero = () => {
     const [order, setOrder] = useState([]);
 
     const agregar = (producto) => {
-        const arr = []
+        console.log("agregar",producto);
+        const arr = [...order];
         const buscarProducto = order.find((item) => producto.id === item.product.id);
         if(buscarProducto === undefined){
             arr.push({qty:1, product:producto});
-            setOrder(arr);
         }else{
-            arr.push({...producto, qty: producto.qty+1, total: (producto.qty+1)*producto.precio});
+            arr.push({...arr, qty: producto.qty+1, total: (producto.qty+1)*producto.price});
         }
+        setOrder(arr);
 
     }
 
