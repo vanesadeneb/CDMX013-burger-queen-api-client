@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useState} from 'react';
 import Usuario from './Usuario';
+import {Header, titulo} from './Header'
 
 const Admin = () => {
     const [usuarios, setUsuarios] = useState(null);
@@ -11,7 +12,10 @@ const Admin = () => {
     },[])
     return (
         <div>
-            <h1>Estos son mis Usuarios:</h1>
+            <Header
+          text = { titulo.text}
+           />
+            <h1>Usuarios:</h1>
             {usuarios && usuarios.map(usuario => <Usuario usuario={usuario} key={usuario.id}/>)}
         </div>
         

@@ -26,18 +26,19 @@ const Pedido = ({order}) => {
             <main className="main">
                 <ul className="lista-productos">
                     {order.map((item) =>
-                    <li>
+                    <li key={item.product.id}>
                         <span className="producto">{item.product.name}</span>
                         <span className="contador">
                             <button  >+</button>
                             <span id='cantidad'>{item.qty}</span>
                             <button  >-</button>
                         </span>
-                        <span className="precio">$50.00</span>
+                        <span className="precio">${item.product.price} </span>
                     </li>
                 )}
                 </ul>
                 <p className="impuestos">Impuestos (incluidos)</p>
+                
                 <section className="total">
                     <p>Total: </p><span>$200.00</span>
                 </section>

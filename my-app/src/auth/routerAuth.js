@@ -1,15 +1,16 @@
 import React from 'react';
-  import {
+import {
   createBrowserRouter,
-} from "react-router-dom";  
+} from "react-router-dom";
 import Mesero from "../componentes/Mesero";
- import ProductosBreakfast from '../componentes/ProductosDesayuno';
-import ProductosComida from '../componentes/ProductosComida'; 
+import ProductosBreakfast from '../componentes/ProductosDesayuno';
+import ProductosComida from '../componentes/ProductosComida';
 //import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LogIn from '../componentes/LogIn';
+import Admin from '../componentes/Admin'
 //import Login from '../componentes/LogIn';
 
-  export const routerAuth = createBrowserRouter([
+export const routerAuth = createBrowserRouter([
   {
     path: "/",
     element: <LogIn />
@@ -17,7 +18,7 @@ import LogIn from '../componentes/LogIn';
   {
     path: "/Mesero",
     element: <Mesero />,
-    
+
     children: [
       {
         path: "/Mesero/menuDesayuno",
@@ -28,10 +29,13 @@ import LogIn from '../componentes/LogIn';
         element: <ProductosComida />,
       }
 
-      
     ],
+  },
+  {
+    path: "/Admin",
+    element: <Admin />
   }
-]);  
+]);
 
 /*  export const routerAuth = () =>  {
   return (
