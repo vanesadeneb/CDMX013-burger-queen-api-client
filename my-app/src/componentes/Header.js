@@ -33,6 +33,13 @@ export const Header = (props) => {
     );
 }
 
-export const titulo = {
-    text: "Menú",
-}
+export const titulo = [
+    {
+        nombre: "Mesero",
+        text: "Menú",
+    },
+    {
+        nombre:"Admin",
+        text: "Personal"
+    }
+]

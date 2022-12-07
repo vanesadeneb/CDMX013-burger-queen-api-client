@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 
 const Pedido = ({order}) => {
-    console.log("orden: ", order);
-    const [productos, setProductos] = useState(null);
     /*
     const [contar, setContar] = useState(0);
         
@@ -29,18 +27,18 @@ const Pedido = ({order}) => {
                     <li key={item.product.id}>
                         <span className="producto">{item.product.name}</span>
                         <span className="contador">
-                            <button  >+</button>
+                            <button>+</button>
                             <span id='cantidad'>{item.qty}</span>
                             <button  >-</button>
                         </span>
-                        <span className="precio">${item.product.price} </span>
+                        <span className="precio">${item.precio} </span>
                     </li>
                 )}
                 </ul>
                 <p className="impuestos">Impuestos (incluidos)</p>
                 
                 <section className="total">
-                    <p>Total: </p><span>$200.00</span>
+                    <p>Total: </p><span id='total'>${}</span>
                 </section>
                 <footer>
                     <button className="enviar"  onClick={() => console.log("funciona el click")}>Mandar Pedido</button>
