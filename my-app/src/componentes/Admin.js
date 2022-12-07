@@ -13,7 +13,7 @@ const Admin = () => {
     return (
         <div>
             <Header
-                text={titulo.text}
+                text={titulo[1].text}
             />
             <table className='tabla-encabezado'>
                 <tr>

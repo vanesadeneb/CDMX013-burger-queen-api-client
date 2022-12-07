@@ -17,7 +17,6 @@ export const ProductosComida = ({agregar}) => {
                 //console.log("producto desayuno:",producto);
                 if(producto.type === "comida"){
                     return <Platillos producto={producto} key={producto.id} agregar={agregar}/>
-
                 }
             })
         } 
