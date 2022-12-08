@@ -207,6 +207,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin: 77px 0px;
+    margin-bottom: 27px;
     font-weight: bold;
   }
 

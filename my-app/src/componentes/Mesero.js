@@ -8,6 +8,7 @@ import ProductosBreakfast from './ProductosDesayuno';
 
 const Mesero = () => {
     const [order, setOrder] = useState([]);
+    const[total, setTotal] = useState(0);
 
     const agregar = (producto) => {
         const arr = [...order];
@@ -18,13 +19,23 @@ const Mesero = () => {
         }else{
             order.map((x)=>{
                 if(x.product.id === producto.id){    
-                    x.qty = x.qty+1
-                    x.precio = (x.qty) * producto.price
+                    x.qty = x.qty+1;
+                    x.precio = (x.qty) * producto.price;
                 }
             });
         }
         setOrder(arr);
     }
+
+    
+
+    const totalPedido = () => {
+        let suma = 0;
+        for(let i = 0; i < order.length; i++){
+            suma += order[i].precio; 
+        }
+        setTotal(suma);
+    } 
 
     return (
     <div>
@@ -33,7 +44,7 @@ const Mesero = () => {
            />
         <BotonesMesero />
         <Pedido order={order} agregar={agregar}/>
-        <ProductosBreakfast agregar={agregar}/>
+        <ProductosBreakfast agregar={agregar} totalPedido={totalPedido}/>
     </div>
     );
 }
