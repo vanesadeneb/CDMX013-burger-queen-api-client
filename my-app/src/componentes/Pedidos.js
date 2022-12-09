@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 
 const Pedido = ({order}) => {
+    //console.log(order);
+    const[total, setTotal] = useState(0);
+    
+    const totalPedido = () => {
+        let suma = 0;
+        for(let i = 0; i < order.length; i++){
+            suma += order[i].precio; 
+        }
+        return(suma);
+    } 
+    
+    useEffect(()=>{
+        setTotal(totalPedido);
+    });
+
     /*
     const [contar, setContar] = useState(0);
         
@@ -35,10 +50,8 @@ const Pedido = ({order}) => {
                     </li>
                 )}
                 </ul>
-                <p className="impuestos">Impuestos (incluidos)</p>
-                
-                <section className="total">
-                    <p>Total: </p><span id='total'>${}</span>
+                <section className="total impuestos">
+                    <p>Total: </p><span id='total'>${total}</span>
                 </section>
                 <footer>
                     <button className="enviar"  onClick={() => console.log("funciona el click")}>Mandar Pedido</button>
