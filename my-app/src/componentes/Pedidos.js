@@ -1,36 +1,30 @@
 import React, { useEffect, useState } from 'react';
 
 
-const Pedido = ({order}) => {
-    //console.log(order);
+const Pedido = ({productos, order, agregar}) => {
+    console.log(productos);
     const[total, setTotal] = useState(0);
+    const [resta, setResta] = useState(0);
+    const [producto, setProducto] = useState([]);
     
+    //productos.map((producto)=>{
+    //    producto
+    //});
+
     const totalPedido = () => {
         let suma = 0;
         for(let i = 0; i < order.length; i++){
             suma += order[i].precio; 
         }
         return(suma);
-    } 
+    }
+    
     
     useEffect(()=>{
         setTotal(totalPedido);
+        //setResta(restar);
     });
 
-    /*
-    const [contar, setContar] = useState(0);
-        
-    useEffect(()=>{
-        document.getElementById('cantidad').textContent = contar;
-    });
-
-    const restar = () => {
-        if(contar > 0){
-            setContar(contar - 1);
-        }
-        
-    }
-*/
     return (
         <div className="contenedor-pedidos">
             <header>
@@ -42,9 +36,13 @@ const Pedido = ({order}) => {
                     <li key={item.product.id}>
                         <span className="producto">{item.product.name}</span>
                         <span className="contador">
-                            <button>+</button>
+                            <button onClick={()=>{agregar(item.product)}}>+</button>
                             <span id='cantidad'>{item.qty}</span>
-                            <button  >-</button>
+                            <button onClick={()=>{  
+                                        item.qty = item.qty-1;
+                                        item.precio = (item.qty-1) * producto.price;
+                                    }
+                             } >-</button>
                         </span>
                         <span className="precio">${item.precio} </span>
                     </li>
