@@ -25,15 +25,6 @@ const Pedido = ({productos, order, agregar}) => {
         //setResta(restar);
     });
 
-    /*
-    const [contar, setContar] = useState(0);
-        
-    useEffect(()=>{
-        document.getElementById('cantidad').textContent = contar;
-    });
-
-    
-*/
     return (
         <div className="contenedor-pedidos">
             <header>
