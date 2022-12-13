@@ -2,19 +2,29 @@ import React, { useState, useEffect } from 'react';
 import {Header, titulo} from '../Header';
 import BotonesMesero from './BotonesMesero';
 import Pedido from './Pedidos'
-//import { Outlet } from 'react-router-dom';
 import ProductosBreakfast from './ProductosDesayuno';
-/* import ProductosComida from './ProductosComida'; producto*/
+import ProductosComida from './ProductosComida';
 
 const Mesero = () => {
     const [order, setOrder] = useState([]);
-    const[total, setTotal] = useState(0);
     const [productos, setProductos] = useState(null);
+    const [menu, setMenu] = useState("desayuno");
+
     useEffect(() => {
         fetch('https://6375370348dfab73a4f4e62a.mockapi.io/api/Products')
             .then(response => response.json())
             .then(productosDesayuno => setProductos(productosDesayuno))
     }, [])
+
+    const cambiarMenu = (e) => {
+        console.log(e.target.value);
+        if (e.target.value === "desayuno") {
+            setMenu("desayuno");
+        }
+        if (e.target.value === "comida") {
+            setMenu("comida");
+        }
+    }
 
     const agregar = (producto) => {
         const arr = [...order];
@@ -50,16 +60,19 @@ const Mesero = () => {
             })
         )
     }
-
-
+    
     return (
     <div>
         <Header
           text = {titulo[0].text}
            />
-        <BotonesMesero />
+        <BotonesMesero cambiarMenu={cambiarMenu}/>
         <Pedido order={order} agregar={agregar} restar={restar} eliminar={eliminar}/>
-        <ProductosBreakfast agregar={agregar} productos={productos}/>
+        {menu === "desayuno" 
+            ? <ProductosBreakfast agregar={agregar} productos={productos}/>
+            : <ProductosComida agregar={agregar} productos={productos}/>
+        }
+        
     </div>
     );
 }
