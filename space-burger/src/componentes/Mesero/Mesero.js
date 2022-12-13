@@ -60,14 +60,18 @@ const Mesero = () => {
             })
         )
     }
-    
+     
+    const formatearOrden = () => {
+        setOrder([]);
+    };
+
     return (
     <div>
         <Header
           text = {titulo[0].text}
            />
         <BotonesMesero cambiarMenu={cambiarMenu}/>
-        <Pedido order={order} agregar={agregar} restar={restar} eliminar={eliminar}/>
+        <Pedido order={order} agregar={agregar} restar={restar} eliminar={eliminar} formatearOrden={formatearOrden}/>
         {menu === "desayuno" 
             ? <ProductosBreakfast agregar={agregar} productos={productos}/>
             : <ProductosComida agregar={agregar} productos={productos}/>
