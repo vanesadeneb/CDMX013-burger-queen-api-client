@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const BotonesMesero = (props) => {
+const BotonesMesero = ({cambiarMenu}) => {
     return(
         <div className="botones-container">
-           <Link to={`/Mesero/menuDesayuno`}><button className="botones" type="submit">Desayunos</button></Link>
-           <Link to={`/Mesero/menuComida`}><button className="botones" type="submit">Comida</button></Link>
+           <button className="botones" onClick={cambiarMenu} value="desayuno"
+            name="desayuno" type="submit">Desayunos</button>
+           <button className="botones" onClick={cambiarMenu} value="comida" name="comida" type="submit">Comida</button>
         </div>
     );
 }
