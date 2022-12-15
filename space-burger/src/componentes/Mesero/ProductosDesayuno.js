@@ -5,17 +5,9 @@ import Platillos from './Platillos';
 
 
 export const ProductosBreakfast = ({productos, agregar}) => {
-    /*
-    const [productos, setProductos] = useState(null);
-    useEffect(() => {
-        fetch('https://6375370348dfab73a4f4e62a.mockapi.io/api/Products')
-            .then(response => response.json())
-            .then(productosDesayuno => setProductos(productosDesayuno))
-    }, [])*/
     return (
         <div className='container-productos'>
             {productos && productos.map(producto =>{
-                //console.log("producto desayuno:",producto);
                 if(producto.type === "desayuno"){
                     return <Platillos producto={producto} key={producto.id} agregar={agregar}/>
 

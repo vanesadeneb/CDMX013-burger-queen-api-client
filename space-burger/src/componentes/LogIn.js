@@ -3,24 +3,18 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect} from 'react';
 
-const Login = () => {
+const Login = ({user, setUsuario}) => {
     const navigate = useNavigate();
-    const [usuarios, setUsuarios] = useState(() => {
-        // Obteniendo valor guardado
-        const guardado = localStorage.getItem("credenciales");
-        const valorInicial = JSON.parse(guardado);
-        return valorInicial || null;
-      }); 
+    const [usuarios, setUsuarios] = useState([]); 
     const [correo, setCorreo] = useState('');
     const [contraseña, setContraseña] = useState('');
+    
 
     useEffect(()=>{
         fetch('https://6375370348dfab73a4f4e62a.mockapi.io/api/AUTH')
         .then(response => response.json())
         .then(todosLosUsuarios => setUsuarios(todosLosUsuarios))
-        // guardando credenciales del usuario
-        localStorage.setItem("credenciales", JSON.stringify(correo));
-    },[correo])
+    },[])
        
     const onSubmit = (e) => {
         e.preventDefault();
@@ -30,6 +24,8 @@ const Login = () => {
             document.getElementById('errorCorreo').style.visibility = 'visible';
         }else{
             document.getElementById('errorCorreo').style.visibility = 'hidden';
+            localStorage.setItem("credenciales", JSON.stringify(correo));
+            setUsuario(correo);
         }
 
         if(contraseña === ''){
@@ -37,7 +33,7 @@ const Login = () => {
         }else{
             document.getElementById('errorContraseña').style.visibility = 'hidden';
         }
-        //console.log(correo, contraseña);
+
         usuarios.forEach((usuario) => {
             if(usuario.Email === correo && usuario.Password === contraseña){
                const rol = usuario.Rol;
