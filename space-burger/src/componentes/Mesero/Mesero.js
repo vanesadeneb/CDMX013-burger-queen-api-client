@@ -17,7 +17,6 @@ const Mesero = () => {
     }, [])
 
     const cambiarMenu = (e) => {
-        console.log(e.target.value);
         if (e.target.value === "desayuno") {
             setMenu("desayuno");
         }
@@ -27,9 +26,6 @@ const Mesero = () => {
     }
 
     const agregar = (producto) => {
-        const arr = [...order];
-        const buscarProducto = order.find((item) => producto.id === item.product.id);
-
         if (!order.find((element) => element.product.id === producto.id)) {
             const updatedOrder = [...order, { product: producto, qty: 1, precio: producto.price }];
             setOrder(updatedOrder);
