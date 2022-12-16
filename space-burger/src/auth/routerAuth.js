@@ -3,13 +3,32 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 import Mesero from "../componentes/Mesero/Mesero";
-import ProductosBreakfast from '../componentes/Mesero/ProductosDesayuno';
-import ProductosComida from '../componentes/Mesero/ProductosComida';
-//import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LogIn from '../componentes/LogIn';
-import Admin from '../componentes/Administrador/Admin'
-//import Login from '../componentes/LogIn';
+import Admin from '../componentes/Administrador/Admin';
 
+export const routerAuth = (usuario, rolAdmin, rolMesero, cambiarUsuario) => {
+if (rolAdmin === false) {
+  if(rolMesero){
+    return createBrowserRouter([
+      {
+         path: "/",
+         element: <Mesero usuario={usuario} cambiarUsuario={cambiarUsuario} />,
+       }
+      ])
+  }else{
+    return console.log("no entro a componente mesero!");
+  }
+} else {
+  return createBrowserRouter([
+    {
+      path: "/",
+      element: <Admin usuario={usuario} cambiarUsuario={cambiarUsuario} />,
+    }
+  ]);
+};
+}
+
+
+/*
 export const routerAuth = createBrowserRouter([
   {
     path: "/",
@@ -35,7 +54,7 @@ export const routerAuth = createBrowserRouter([
     path: "/Admin",
     element: <Admin />
   }
-]);
+]);*/
 
 /*  export const routerAuth = () =>  {
   return (

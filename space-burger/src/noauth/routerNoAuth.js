@@ -5,10 +5,10 @@ import {
 import Login from "../componentes/LogIn";
 import ErrorPage from "../error-page";
 
-export const routerNoAuth = (setUsuario) => createBrowserRouter([
+export const routerNoAuth = (cambiarUsuario) => createBrowserRouter([
     {
       path: "/",
-      element: <Login setUsuario={setUsuario}/>,
+      element: <Login cambiarUsuario={cambiarUsuario}/>,
       errorElement: <ErrorPage />
     }
   ]);
