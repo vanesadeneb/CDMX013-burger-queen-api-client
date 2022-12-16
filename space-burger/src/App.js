@@ -2,14 +2,19 @@
 import React, { useEffect } from 'react';
 import { useState } from "react";
 import { RouterProvider } from "react-router-dom";
-//import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import { routerNoAuth } from './noauth/routerNoAuth';
 import { routerAuth } from './auth/routerAuth';
-//import Login from './componentes/LogIn';
-//import Mesero from './componentes/Mesero';
 
 export default function App() {
-  const [user, setUsuario] = useState(null);
+  const [usuario, setUsuario] = useState(null);
+  const [rolAdmin, setRolAdmin] = useState(null);
+  const [rolMesero, setMesero] = useState(null);
+
+  const cambiarUsuario = (email, rolAdmin, rolMesero) => {
+    setUsuario(email);
+    setRolAdmin(rolAdmin);
+    setMesero(rolMesero);
+  };
 
   useEffect(() => {
     // Obteniendo valor guardado
@@ -20,25 +25,10 @@ export default function App() {
 
   return (
     <div>
-      {user
-        ? <RouterProvider router={routerAuth}/>
-        : <RouterProvider router={routerNoAuth(setUsuario)}/>
+      {usuario
+        ? <RouterProvider router={routerAuth(usuario, rolAdmin, rolMesero, cambiarUsuario)}/>
+        : <RouterProvider router={routerNoAuth(cambiarUsuario)}/>
       }
     </div>
-    /*
-    <Router>
-        <Routes>
-          <Route path="/pedidos" element={<Mesero />} />
-          <Route path="/" element={<Login />} />
-          <Route
-            path="*"
-            element={
-              <div>
-                <h2>404 Page not found</h2>
-              </div>
-            }
-          />
-        </Routes>
-    </Router>*/
   );
 }
