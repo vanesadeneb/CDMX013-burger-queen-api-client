@@ -1,31 +1,28 @@
 import logo from '../imagenes/logo.png';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useState, useEffect} from 'react';
 
-const Login = ({user, setUsuario}) => {
-    const navigate = useNavigate();
+const Login = ({cambiarUsuario}) => {
     const [usuarios, setUsuarios] = useState([]); 
     const [correo, setCorreo] = useState('');
     const [contraseña, setContraseña] = useState('');
     
 
     useEffect(()=>{
-        fetch('https://6375370348dfab73a4f4e62a.mockapi.io/api/AUTH')
+        fetch('https://6375370348dfab73a4f4e62a.mockapi.io/api/Users')
         .then(response => response.json())
         .then(todosLosUsuarios => setUsuarios(todosLosUsuarios))
     },[])
-       
+      
     const onSubmit = (e) => {
         e.preventDefault();
-
+        console.log(usuarios); 
         //validaciones
         if(correo === ''){
             document.getElementById('errorCorreo').style.visibility = 'visible';
         }else{
             document.getElementById('errorCorreo').style.visibility = 'hidden';
             localStorage.setItem("credenciales", JSON.stringify(correo));
-            setUsuario(correo);
         }
 
         if(contraseña === ''){
@@ -35,21 +32,8 @@ const Login = ({user, setUsuario}) => {
         }
 
         usuarios.forEach((usuario) => {
-            if(usuario.Email === correo && usuario.Password === contraseña){
-               const rol = usuario.Rol;
-               switch(rol){
-                case('Mesero'):
-                    console.log(usuario, rol);
-                    navigate("/Mesero");
-                    break;
-                case('Admin'):
-                    console.log(usuario, rol);
-                    navigate("/Admin");
-                    break;
-                default:
-                    console.log('no estas registrado o no tienes un rol asignado');
-                    break;
-               }
+            if(usuario.email.email === correo){
+                cambiarUsuario(usuario.email.email, usuario.admin, usuario.roles.isWaiter);
             }
         });
     } 

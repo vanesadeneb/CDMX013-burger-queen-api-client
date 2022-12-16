@@ -5,7 +5,7 @@ import Pedido from './Pedidos'
 import ProductosBreakfast from './ProductosDesayuno';
 import ProductosComida from './ProductosComida';
 
-const Mesero = () => {
+const Mesero = ({cambiarUsuario}) => {
     const [order, setOrder] = useState([]);
     const [productos, setProductos] = useState(null);
     const [menu, setMenu] = useState("desayuno");
@@ -65,6 +65,7 @@ const Mesero = () => {
     <div>
         <Header
           text = {titulo[0].text}
+          cambiarUsuario={cambiarUsuario}
            />
         <BotonesMesero cambiarMenu={cambiarMenu}/>
         <Pedido order={order} agregar={agregar} restar={restar} eliminar={eliminar} formatearOrden={formatearOrden}/>

@@ -1,25 +1,20 @@
 import React from 'react';
 import spaceburgersHorizontal from '../imagenes/spaceburgersHorizontal.png';
 import rocket from '../imagenes/rocket.png';
-import { useNavigate } from 'react-router-dom';
 import notification from '../imagenes/notification.png';
 
-export const Header = (props) => {
-    const navigate = useNavigate();
+export const Header = ({cambiarUsuario, text}) => {
     
     const logout = (e) => {localStorage.clear() 
-        console.log(localStorage.getItem('credenciales'));
-        navigate('/');
+        cambiarUsuario("","");
     } 
-    const completados= (e) =>{
-        navigate('/Completados')
-    }
+
     return(
         <div className="header-container">
             <img className="logoHorizontal" src={spaceburgersHorizontal} alt="Space Burgers" />
-            <p className="titulo">{props.text}</p>
+            <p className="titulo">{text}</p>
             <div id="contenedor-botones">
-                <div className='contenedor-completados' onClick={completados}> 
+                <div className='contenedor-completados'> 
                     <img className='completados' src={notification} alt="Pedidos Completados" />
                     <p className='completadosText'>Pedidos Completados</p>
                 </div>
