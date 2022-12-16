@@ -20,7 +20,6 @@ const Pedido = ({order, agregar, restar, eliminar, formatearOrden}) => {
 
     const nombreCliente = (e) => {
         e.preventDefault();
-        console.log(e.target.value);
         setCliente(e.target.value);
     };
 
@@ -51,15 +50,12 @@ const Pedido = ({order, agregar, restar, eliminar, formatearOrden}) => {
             .then(data => {
                 console.log(data);
                 valoresPorDefecto();
-            });
-
-        
+        });
     }
     
     return (
         <div className="contenedor-pedidos">
-            <form className='form-cliente' onSubmit={informacionDeLaOrden}> 
-                <header>
+                <header className='form-cliente'>
                         <p>Cliente </p>
                         <input onChange={nombreCliente} id="cliente" type="text" className='info-cliente'></input>
                 </header>
@@ -82,10 +78,9 @@ const Pedido = ({order, agregar, restar, eliminar, formatearOrden}) => {
                         <p>Total: </p><span id='total'>${total}</span>
                     </section>
                     <footer>
-                        <button className="enviar" type="submit">Mandar Pedido</button>
+                        <button className="enviar" onClick={informacionDeLaOrden}>Mandar Pedido</button>
                     </footer>
                 </main>
-            </form>
         </div>
     );
 }

@@ -164,13 +164,7 @@ body {
     font-size: 30px;
 
   }
-/*
-  .form-cliente {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-*/
+
   .form-cliente p{
     text-align: center;
     font-size: 30px;
@@ -180,6 +174,7 @@ body {
   .info-cliente {
     width: 82%;
     height: 60px;
+    margin: 6px 1.5em;
   }
 
   .lista-productos {
