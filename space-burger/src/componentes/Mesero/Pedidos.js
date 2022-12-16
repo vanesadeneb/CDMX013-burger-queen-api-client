@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import borrar from '../../imagenes/borrar.png'
+import Swal from 'sweetalert2'
 
 const Pedido = ({order, agregar, restar, eliminar, formatearOrden}) => {
     const[total, setTotal] = useState(0);
@@ -25,6 +26,13 @@ const Pedido = ({order, agregar, restar, eliminar, formatearOrden}) => {
 
     const informacionDeLaOrden = (e) => {
         e.preventDefault();
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'El pedido fue enviado correctamente',
+            showConfirmButton: false,
+            timer: 1500
+          })
         const infoOrden = {
            userId: JSON.parse(localStorage.getItem("credenciales")),
            client: cliente,
