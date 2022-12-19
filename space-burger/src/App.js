@@ -14,6 +14,7 @@ export default function App() {
     setUsuario(email);
     setRolAdmin(rolAdmin);
     setMesero(rolMesero);
+    console.log("admin",rolAdmin);
   };
 
   useEffect(() => {

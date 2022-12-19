@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Usuario from './Usuario';
 import { Header, titulo } from '../Header'
 
-const Admin = () => {
+const Admin = ({cambiarUsuario}) => {
     const [usuarios, setUsuarios] = useState(null);
     useEffect(() => {
         fetch('https://6375370348dfab73a4f4e62a.mockapi.io/api/AUTH')
@@ -14,6 +14,7 @@ const Admin = () => {
         <div>
             <Header
                 text={titulo[1].text}
+                cambiarUsuario={cambiarUsuario}
             />
             <table className='tabla-encabezado'>
                 <tr>
