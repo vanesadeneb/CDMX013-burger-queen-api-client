@@ -2,7 +2,7 @@ import React from 'react';
 import {
     createBrowserRouter,
   } from "react-router-dom";
-import Login from "../componentes/LogIn";
+import Login from "../noauth/LogIn";
 import ErrorPage from "../error-page";
 
 export const routerNoAuth = (cambiarUsuario) => createBrowserRouter([

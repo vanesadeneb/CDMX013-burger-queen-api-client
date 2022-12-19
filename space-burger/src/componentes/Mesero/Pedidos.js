@@ -5,60 +5,59 @@ import Swal from 'sweetalert2'
 const Pedido = ({order, agregar, restar, eliminar, formatearOrden}) => {
     const[total, setTotal] = useState(0);
     const [cliente, setCliente] = useState("");
-  
-    const totalPedido = () => {
-        let suma = 0;
-        for(let i = 0; i < order.length; i++){
-            suma += order[i].precio; 
-        }
-        return(suma);
-    }
-     
-    
     useEffect(()=>{
+        const totalPedido = () => {
+            let suma = 0;
+            for(let i = 0; i < order.length; i++){
+                suma += order[i].precio; 
+            }
+            return(suma);
+        }
+
         setTotal(totalPedido);
-    }); 
+    },[order]); 
 
     const nombreCliente = (e) => {
         e.preventDefault();
         setCliente(e.target.value);
     };
 
-    const informacionDeLaOrden = (e) => {
-        e.preventDefault();
-        Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'El pedido fue enviado correctamente',
-            showConfirmButton: false,
-            timer: 1500
-          })
-        const infoOrden = {
-           userId: JSON.parse(localStorage.getItem("credenciales")),
-           client: cliente,
-           products: order,
-           status: "pending",
-           dateEntry: new Date(),
-        };
+    const informacionDeLaOrden = () => {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'El pedido fue enviado correctamente',
+                showConfirmButton: false,
+                timer: 3000
+              })
+            
+            const infoOrden = {
+               userId: JSON.parse(localStorage.getItem("credenciales")),
+               client: cliente,
+               products: order,
+               status: "pending",
+               dateEntry: new Date(),
+            };
+    
+            const valoresPorDefecto = () => {
+                formatearOrden();
+                setCliente("");
+                document.getElementById("cliente").value = "";
+              };
+    
+            const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(infoOrden)
+            };
+    
+            fetch('https://6375370348dfab73a4f4e62a.mockapi.io/api/ORDERS', requestOptions)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    valoresPorDefecto();
+            });
 
-        const valoresPorDefecto = () => {
-            formatearOrden();
-            setCliente("");
-            document.getElementById("cliente").value = "";
-          };
-
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(infoOrden)
-        };
-
-        fetch('https://6375370348dfab73a4f4e62a.mockapi.io/api/ORDERS', requestOptions)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                valoresPorDefecto();
-        });
     }
     
     return (
@@ -86,7 +85,15 @@ const Pedido = ({order, agregar, restar, eliminar, formatearOrden}) => {
                         <p>Total: </p><span id='total'>${total}</span>
                     </section>
                     <footer>
-                        <button className="enviar" onClick={informacionDeLaOrden}>Mandar Pedido</button>
+                        <button className="enviar" onClick={()=>{
+                            if(cliente === ""){
+                                return Swal.fire("Favor de ingresar nombre del cliente");
+                            }
+                            if(order.length === 0){
+                                return Swal.fire("No se puede enviar una orden sin productos");
+                            }
+                            return informacionDeLaOrden();
+                        }}>Mandar Pedido</button>
                     </footer>
                 </main>
         </div>
