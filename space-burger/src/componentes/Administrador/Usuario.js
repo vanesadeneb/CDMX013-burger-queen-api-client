@@ -1,25 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import editar from '../../imagenes/editar.png'
 import borrar from '../../imagenes/borrar.png'
 
 
-const Usuario = (props) => {
-    console.log(props.usuario.Email);
-    return (
-        <table className='tabla-usuarios'>
-           
+const Usuario = ({usuario}) => {
+    const [rol, setRol] = useState("");
+
+
+    console.log(usuario);
+    return (     
             <tr>
-                <td>{props.usuario.Email}</td>
-                <td>{props.usuario.Rol}</td>
-                <td>{props.usuario.id}</td>
+                <td>{usuario.id}</td>
+                <td>{usuario.email.email}</td>
+                <td>{usuario.roles.isKitchen ? "Cocinero" : usuario.roles.isAdmin ? "Admin" : "Mesero"}</td>
                 <td> <img className="editar" src={editar} alt="editar" /></td>
                 <td><img className="borrar" src={borrar} alt="borrar" /></td>
-
-
             </tr>
-
-
-        </table>
     );
 };
 

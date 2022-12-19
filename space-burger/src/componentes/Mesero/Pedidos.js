@@ -5,6 +5,7 @@ import Swal from 'sweetalert2'
 const Pedido = ({order, agregar, restar, eliminar, formatearOrden}) => {
     const[total, setTotal] = useState(0);
     const [cliente, setCliente] = useState("");
+    
     useEffect(()=>{
         const totalPedido = () => {
             let suma = 0;

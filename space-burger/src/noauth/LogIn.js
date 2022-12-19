@@ -33,7 +33,7 @@ const Login = ({cambiarUsuario}) => {
 
         usuarios.forEach((usuario) => {
             if(usuario.email.email === correo){
-                cambiarUsuario(usuario.email.email, usuario.admin, usuario.roles.isWaiter);
+                cambiarUsuario(usuario.email.email, usuario.roles.isAdmin, usuario.roles.isWaiter);
             }
         });
     } 

@@ -4,12 +4,21 @@ import Usuario from './Usuario';
 import { Header, titulo } from '../Header'
 
 const Admin = ({cambiarUsuario}) => {
-    const [usuarios, setUsuarios] = useState(null);
+        const [usuarios, setUsuarios] = useState(null);
     useEffect(() => {
-        fetch('https://6375370348dfab73a4f4e62a.mockapi.io/api/AUTH')
+        fetch('https://6375370348dfab73a4f4e62a.mockapi.io/api/Users')
             .then(response => response.json())
             .then(todosLosUsuarios => setUsuarios(todosLosUsuarios))
     }, [])
+    /*
+    const infoUsuario = {
+        email: ,
+        roles: ,
+        admin: 
+     };
+*/
+    
+
     return (
         <div>
             <Header
@@ -17,19 +26,23 @@ const Admin = ({cambiarUsuario}) => {
                 cambiarUsuario={cambiarUsuario}
             />
             <table className='tabla-encabezado'>
-                <tr>
-                    <th>Email</th>
-                    <th>Rol</th>
-                    <th>Id</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Email</th>
+                        <th>Roles</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
 
-                </tr>
+                    </tr>
+                </thead>
+                <tbody>
+                    {usuarios && usuarios.map(usuario => <Usuario usuario={usuario} key={usuario.id} />)}
+                </tbody>
             </table>
-            {usuarios && usuarios.map(usuario => <Usuario usuario={usuario} key={usuario.id} />)}
         </div>
 
     );
 }
-titulo.text = "Personal"
+//titulo.text = "Personal"
 export default Admin;
