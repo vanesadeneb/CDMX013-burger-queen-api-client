@@ -1,12 +1,8 @@
-import React, { useState } from 'react';
 import editar from '../../imagenes/editar.png'
 import borrar from '../../imagenes/borrar.png'
 
 
 const Usuario = ({usuario}) => {
-    const [rol, setRol] = useState("");
-
-
     console.log(usuario);
     return (     
             <tr>
