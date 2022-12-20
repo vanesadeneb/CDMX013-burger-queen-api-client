@@ -26,7 +26,7 @@ export const routerAuth = (usuario, rolAdmin, rolMesero, cambiarUsuario) => {
     return createBrowserRouter([
       {
          path: "/",
-         element: <Admin cambiarUsuario={cambiarUsuario} />,
+         element: <Mesero cambiarUsuario={cambiarUsuario} />,
        }
       ])
 }
